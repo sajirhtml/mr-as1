@@ -1,6 +1,6 @@
 import React, { use, useEffect, useState } from "react";
 import Card from "./Card";
-import {  useParams } from "react-router";
+import { useParams } from "react-router";
 const allProdPromise = fetch("https://fakestoreapi.com/products").then((res) =>
   res.json(),
 );
@@ -15,22 +15,26 @@ const CategoryCards = () => {
       const elecProds = allProds.filter((prods) => prods.category == category);
       setProdCategory(elecProds);
     } else if (category == "jewelery") {
-      const jeweleryProds = allProds.filter((prods) => prods.category == category);
+      const jeweleryProds = allProds.filter(
+        (prods) => prods.category == category,
+      );
       setProdCategory(jeweleryProds);
     } else if (category == "men's clothing") {
       const mensProds = allProds.filter((prods) => prods.category == category);
       setProdCategory(mensProds);
     } else if (category == "women's clothing") {
-      const womensProds = allProds.filter((prods) => prods.category == category);
+      const womensProds = allProds.filter(
+        (prods) => prods.category == category,
+      );
       setProdCategory(womensProds);
     }
-  },[category, allProds]);
+  }, [category, allProds]);
 
   return (
-    <div>
-      {
-                prodCategory.map(prod => <Card key={prod.id} prod={prod}/>)
-            }
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
+      {prodCategory.map((prod) => (
+        <Card key={prod.id} prod={prod} />
+      ))}
     </div>
   );
 };

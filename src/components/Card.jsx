@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 
 const ProductCard = ({prod}) => {
   return (
-    <div className="card w-80 bg-white shadow-xl border border-gray-100 rounded-2xl overflow-hidden font-sans">
+    <div className="card w-full bg-white shadow-xl border border-gray-100 rounded-2xl overflow-hidden font-sans">
       {/* Image Container with light gray background */}
       <figure className="bg-[#f0f2f5] p-8 h-64 flex items-center justify-center">
         <img

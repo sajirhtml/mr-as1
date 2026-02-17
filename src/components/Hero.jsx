@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Hero = () => {
   return (
@@ -19,7 +20,7 @@ const Hero = () => {
                 Discover the latest trends in fashion, electronics, and more. Shop
                 with confidence and style at SwiftCart.
               </p>
-              <button className="btn btn-primary">Shop Now</button>
+              <Link to={'/products'} className="btn btn-primary">Shop Now</Link>
             </div>
           </div>
         </div>

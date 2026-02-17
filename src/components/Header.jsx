@@ -1,32 +1,24 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import { CiShoppingCart } from "react-icons/ci";
 
 const Header = () => {
   return (
     <>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar bg-base-100 shadow-sm px-5 md:px-15">
         <div className="navbar-start">
-          <Link to="/" className="btn btn-ghost text-2xl text-indigo-600">SwiftCart</Link>
+          <Link to="/" className="font-semibold text-3xl text-indigo-600 hover:text-indigo-700 transition-colors">SwiftCart</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/products">Products</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
+          <ul className="flex gap-4 px-1">
+            <NavLink to="/" className={({isActive}) => isActive ? "text-indigo-600 underline decoration-indigo-600 underline-offset-4" : "hover:text-indigo-600 transition-colors"}>Home</NavLink>
+            <NavLink to="/products" className={({isActive}) => isActive ? "text-indigo-600 underline decoration-indigo-600 underline-offset-4" : "hover:text-indigo-600 transition-colors"}>Products</NavLink>
+            <NavLink to="/about" className={({isActive}) => isActive ? "text-indigo-600 underline decoration-indigo-600 underline-offset-4" : "hover:text-indigo-600 transition-colors"}>About</NavLink>
+            <NavLink to="/contact" className={({isActive}) => isActive ? "text-indigo-600 underline decoration-indigo-600 underline-offset-4" : "hover:text-indigo-600 transition-colors"}>Contact</NavLink>
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to="/cart" className="btn btn-ghost text-3xl text-indigo-600 rounded-4xl ">
+          <Link to="/cart" className="text-3xl text-indigo-600 hover:text-indigo-700 transition-colors rounded-4xl">
             <CiShoppingCart />
           </Link>
           <div className="dropdown dropdown-end">
@@ -49,20 +41,12 @@ const Header = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-35 p-2 shadow overflow-auto"
+              className="dropdown-content bg-base-100 rounded-box z-1 mt-3 w-35 p-2 shadow overflow-auto flex flex-col gap-2"
             >
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/products">Products</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
+              <NavLink to="/" className={({isActive}) => isActive ? "text-indigo-600 underline decoration-indigo-600 underline-offset-4 px-2 py-1" : "hover:text-indigo-600 transition-colors px-2 py-1"}>Home</NavLink>
+              <NavLink to="/products" className={({isActive}) => isActive ? "text-indigo-600 underline decoration-indigo-600 underline-offset-4 px-2 py-1" : "hover:text-indigo-600 transition-colors px-2 py-1"}>Products</NavLink>
+              <NavLink to="/about" className={({isActive}) => isActive ? "text-indigo-600 underline decoration-indigo-600 underline-offset-4 px-2 py-1" : "hover:text-indigo-600 transition-colors px-2 py-1"}>About</NavLink>
+              <NavLink to="/contact" className={({isActive}) => isActive ? "text-indigo-600 underline decoration-indigo-600 underline-offset-4 px-2 py-1" : "hover:text-indigo-600 transition-colors px-2 py-1"}>Contact</NavLink>
             </ul>
           </div>
         </div>

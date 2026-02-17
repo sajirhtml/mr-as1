@@ -15,7 +15,9 @@ const ProductsLayout = () => {
       <section>
         <Categories></Categories>
       </section>
-      <section>{category === undefined ? <AllCards /> : <Outlet />}</section>
+      <section className="mx-3 lg:mx-15">
+        {category === undefined ? <AllCards /> : <Outlet />}
+        </section>
       <footer>
         <Footer></Footer>
       </footer>
