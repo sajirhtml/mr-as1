@@ -2,10 +2,10 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router';
 import HomeLayout from '../Layouts/HomeLayout';
 import ProductsLayout from '../Layouts/ProductsLayout';
-import CategoryCards from '../components/categoryCards';
 import ErrorPage from '../Pages/ErrorPage';
 import AboutPage from '../Pages/AboutPage';
 import ContactPage from '../Pages/ContactPage';
+import CategoryCards from '../components/CategoryCards';
 
 const router = createBrowserRouter([
     {
